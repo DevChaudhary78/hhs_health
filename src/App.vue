@@ -1,15 +1,11 @@
 <template>
-  <div>
-    <h1>Step {{ currentStep }}</h1>
-    <form @submit.prevent="nextStep">
-      <component :is="currentStepComponent" :formData="formData"></component>
+  <h1>Step {{ currentStep }}</h1>
+  <form @submit.prevent="nextStep">
+    <component :is="currentStepComponent" :formData="formData"></component>
 
-      <div>
-        <button v-if="currentStep < 3" type="submit">Next</button>
-        <button v-else @click="resetForm">Start Over</button>
-      </div>
-    </form>
-  </div>
+    <button v-if="currentStep < 3" type="submit">Next</button>
+    <button v-else @click="resetForm">Start Over</button>
+  </form>
 </template>
 
 <script>
