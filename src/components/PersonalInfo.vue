@@ -7,11 +7,18 @@
 
   <label for="gender">Gender: </label>
   <select v-model="formData.gender" name="gender" id="gender" required>
-    <option value="male">Male</option>
+    <option value="" selected hidden disabled>Choose</option>
+    <option value="male" selected="selected">Male</option>
     <option value="female">Female</option>
     <option value="other">Other</option>
   </select>
 </template>
+
+<style>
+input {
+  margin-bottom: 1rem;
+}
+</style>
 
 <script>
 export default {
