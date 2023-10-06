@@ -1,11 +1,12 @@
 <template>
   <label for="dateOfBirth">Date of Birth:</label>
-  <input v-model="formData.dateOfBirth" type="text" id="dateOfBirth" required>
+  <input v-model="formData.dateOfBirth" type="date" id="dateOfBirth" required>
 
   <label for="healthCard">Health Card Number: </label>
-  <input @input="luhnAlgorithmHCNChecker" v-model="formData.healthCard" type="text" id="healthCard" required>
-  <p v-if="isValidHealthCard">Valid ✅</p>
-  <p v-else>Invalid ❌</p>
+  <input @input="luhnAlgorithmHCNChecker" v-model="formData.healthCard" placeholder="1234567890" type="text"
+    id="healthCard" required>
+  <p v-if="isValidHealthCard" id="valid">Valid ✅</p>
+  <p v-else id="invalid">Invalid ❌</p>
 
   <label for="gender">Gender: </label>
   <select v-model="formData.gender" name="gender" id="gender" required>
@@ -19,6 +20,22 @@
 <style>
 input {
   margin-bottom: 1rem;
+}
+
+#valid,
+#invalid {
+  font-weight: bold;
+  color: white;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+#valid {
+  background: green;
+}
+
+#invalid {
+  background: red;
 }
 </style>
 

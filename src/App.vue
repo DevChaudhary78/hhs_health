@@ -69,8 +69,6 @@ export default {
           return 'PersonalInfo';
         case 3:
           return 'Summary';
-        default:
-          return '';
       }
     }
   },
@@ -84,7 +82,7 @@ export default {
       }
     },
     resetForm() {
-      this.currentStep = 0;
+      this.currentStep = 1;
       this.formData = {
         firstName: '',
         lastName: '',
