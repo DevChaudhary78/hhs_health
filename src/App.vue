@@ -5,7 +5,7 @@
     <component :is="currentStepComponent" :formData="formData"></component>
 
     <!-- v-if/else is awesome, using which we can dynamically render components based on condition -->
-    <button v-if="currentStep < 3" type="submit">Next</button>
+    <button v-if="currentStep < 3">Next</button>
     <button v-else @click="resetForm">Start Over</button>
   </form>
 </template>
@@ -14,12 +14,13 @@
 form {
   border: 1px solid #457b9d;
   border-radius: 0.2rem;
-  width: 20rem;
+  max-width: 30rem;
   padding: 3rem;
   background: #a8dadc;
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 button {

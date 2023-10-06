@@ -16,3 +16,7 @@ body {
   justify-content: center;
   font-family: 'Ubuntu Mono';
 }
+
+input {
+  padding: 0.3rem;
+}
