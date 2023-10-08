@@ -80,6 +80,7 @@ export default {
         this.currentStep++;
       } else {
         // I am thinking about making a web server using Go lang or Rust to store this data into databsae (:
+        this.currentStep = 1;
       }
     },
     resetForm() {
