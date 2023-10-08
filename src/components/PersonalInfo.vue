@@ -15,6 +15,8 @@
     <option value="female">Female</option>
     <option value="other">Other</option>
   </select>
+
+  <button :disabled="!isValidHealthCard">Submit</button>
 </template>
 
 <style>
@@ -41,7 +43,7 @@ input {
 
 <script>
 export default {
-  props: ['formData'],
+  props: ['formData', 'currentStep'],
 
   data() {
     return {

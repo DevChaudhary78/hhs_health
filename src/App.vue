@@ -2,11 +2,8 @@
   <h1>Step {{ currentStep }}</h1>
   <form @submit.prevent="nextStep">
     <!-- used to dynamically render the component based on the return value from currentStepComponent -->
-    <component :is="currentStepComponent" :formData="formData"></component>
+    <component :is="currentStepComponent" :currentStep="currentStep" :formData="formData"></component>
 
-    <!-- v-if/else is awesome, using which we can dynamically render components based on condition -->
-    <button v-if="currentStep < 3">Next</button>
-    <button v-else @click="resetForm">Start Over</button>
   </form>
 </template>
 
@@ -83,16 +80,6 @@ export default {
         this.currentStep = 1;
       }
     },
-    resetForm() {
-      this.currentStep = 1;
-      this.formData = {
-        firstName: '',
-        lastName: '',
-        dateOfBirth: '',
-        healthCard: '',
-        gender: '',
-      }
-    }
   },
 
 }

@@ -4,6 +4,8 @@
   <p><span>Date of Birth:</span> {{ formData.dateOfBirth }}</p>
   <p><span>Health Card Number:</span> {{ formData.healthCard }}</p>
   <p><span>Gender:</span> {{ formData.gender }}</p>
+
+  <button @click="resetForm">Start Over</button>
 </template>
 
 <style scoped>
@@ -23,6 +25,19 @@ p {
 
 <script>
 export default {
-  props: ['formData']
+  props: ['formData', 'currentStep'],
+
+  methods: {
+    resetForm() {
+      this.currentStep = 0;
+      this.formData = {
+        firstName: '',
+        lastName: '',
+        dateOfBirth: '',
+        healthCard: '',
+        gender: '',
+      }
+    }
+  }
 }
 </script>

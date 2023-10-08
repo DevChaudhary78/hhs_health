@@ -5,7 +5,9 @@
 
   <label for="lastName">Last Name: </label>
   <input v-model="formData.lastName" placeholder="Chaudhary" id="lastName" required type="text">
-</template>
+
+  <button v-if="currentStep < 3">Next</button>
+</template>  
 
 <style scoped>
 input {
@@ -16,6 +18,6 @@ input {
 
 <script>
 export default {
-  props: ['formData']
+  props: ['formData', 'currentStep']
 }
 </script>
