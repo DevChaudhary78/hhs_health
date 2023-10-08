@@ -19,16 +19,6 @@ form {
   flex-direction: column;
   justify-content: center;
 }
-
-button {
-  height: 40px;
-  width: 100px;
-  margin: 1rem auto;
-  border: none;
-  border-radius: 5px;
-
-  font-weight: bold;
-}
 </style>
 
 <script>
@@ -80,6 +70,16 @@ export default {
         this.currentStep = 1;
       }
     },
+    resetForm() {
+      this.currentStep = 0;
+      this.formData = {
+        firstName: '',
+        lastName: '',
+        dateOfBirth: '',
+        healthCard: '',
+        gender: '',
+      }
+    }
   },
 
 }
