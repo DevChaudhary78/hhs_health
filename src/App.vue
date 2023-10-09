@@ -2,7 +2,8 @@
   <h1>Step {{ currentStep }}</h1>
   <form @submit.prevent="nextStep">
     <!-- used to dynamically render the component based on the return value from currentStepComponent -->
-    <component :is="currentStepComponent" :currentStep="currentStep" :formData="formData"></component>
+    <component :is="currentStepComponent" @resetFormEvent="resetForm" :currentStep="currentStep" :formData="formData">
+    </component>
 
   </form>
 </template>
@@ -71,7 +72,7 @@ export default {
       }
     },
     resetForm() {
-      this.currentStep = 0;
+      this.currentStep = 1;
       this.formData = {
         firstName: '',
         lastName: '',

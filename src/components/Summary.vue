@@ -29,14 +29,7 @@ export default {
 
   methods: {
     resetForm() {
-      this.currentStep = 0;
-      this.formData = {
-        firstName: '',
-        lastName: '',
-        dateOfBirth: '',
-        healthCard: '',
-        gender: '',
-      }
+      this.$emit("resetFormEvent");
     }
   }
 }
